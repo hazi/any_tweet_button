@@ -9,7 +9,7 @@ function openTweetWindow(url){
 
 {
   const nodeQuery = [
-    'iframe[id^="twitter-widget"]',
+    'iframe.twitter-share-button-rendered[src^="http"]',
     'a[href^="https://twitter.com/intent/tweet"]',
     'a[href^="http://twitter.com/share"]'
   ]
