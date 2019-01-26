@@ -27,7 +27,7 @@ function openTweetWindow(url){
   } else if (node) {
     tweet = node.href;
   } else {
-    tweet = 'https://twitter.com/intent/tweet?text=' + encodeURI(title + ' ' + url)
+    tweet = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url)
   };
 
   openTweetWindow(tweet);
