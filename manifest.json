@@ -2,7 +2,7 @@
   "author": "HAZI",
   "name": "Any tweet button",
   "short_name": "Any tweet",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "will make the best tweet for the page you are viewing",
   "homepage_url": "https://hazi.jp",
   "permissions": ["activeTab"],
