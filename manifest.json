@@ -5,7 +5,7 @@
   "version": "0.1",
   "description": "will make the best tweet for the page you are viewing",
   "homepage_url": "https://hazi.jp",
-  "permissions": ["tabs", "activeTab", "http://*/*", "https://*/*"],
+  "permissions": ["activeTab"],
   "background": {
     "scripts": ["background.js"],
     "persistent": false
