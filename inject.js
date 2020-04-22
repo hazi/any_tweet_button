@@ -41,6 +41,7 @@ function getTitle() {
   const nodeQuery = [
     'iframe.twitter-share-button-rendered[src^="http"]',
     'a[href^="https://twitter.com/intent/tweet"]',
+    'a[href^="http://twitter.com/intent/tweet"]',
     'a[href^="http://twitter.com/share"]'
   ]
   const node = document.querySelector(nodeQuery.join(','));
