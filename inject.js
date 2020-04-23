@@ -12,6 +12,7 @@ function urlOptimize(url){
 
   if(url.match(/^\/\//)) { resultURL = document.location.protocol + resultURL }
 
+  // optimize amazon.co.jp URL
   amazon = resultURL.match(/^(https?:\/\/)(www.)?(amazon.co.jp\/)(?:.+?\/)(dp\/.+$)/);
   if(amazon) {
     let arr = amazon.filter(Boolean)
@@ -22,7 +23,7 @@ function urlOptimize(url){
   return resultURL
 }
 
-function getURL() {
+function getLocationURL() {
   let ogURL = document.querySelector('meta[property="og:url"]');
   ogURL = ogURL && ogURL.content;
 
@@ -37,26 +38,38 @@ function getTitle() {
   return ogTitle && ogTitle.content || document.title;
 }
 
-{
+function getTweetButtonURL(){
   const nodeQuery = [
     'iframe.twitter-share-button-rendered[src^="http"]',
     'a[href^="https://twitter.com/intent/tweet"]',
     'a[href^="http://twitter.com/intent/tweet"]',
+    'a[href^="https://twitter.com/share"]',
     'a[href^="http://twitter.com/share"]'
   ]
   const node = document.querySelector(nodeQuery.join(','));
 
-  let tweet;
+  let url;
   if (node && node.nodeName === 'IFRAME') {
     const src = new URL(node.src);
-    tweet = 'https://twitter.com/intent/tweet?' + src.hash.substr(1);
+    url = 'https://twitter.com/intent/tweet?' + src.hash.substr(1);
   } else if (node) {
-    tweet = node.href;
+    url = node.href;
+  }
+
+  return url;
+}
+
+{
+  let resultURL;
+
+  const tweetButtonURL = getTweetButtonURL();
+  if (tweetButtonURL) {
+    resultURL = tweetButtonURL
   } else {
-    const url = urlOptimize(getURL());
+    const url = urlOptimize(getLocationURL());
     const title = getTitle();
-    tweet = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url)
+    resultURL = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url)
   };
 
-  openTweetWindow(tweet);
+  openTweetWindow(resultURL);
 }
