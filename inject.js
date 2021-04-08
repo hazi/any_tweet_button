@@ -1,10 +1,11 @@
 function openTweetWindow(url) {
-  n = window.screen.height,
-  r = window.screen.width,
-  i = Math.round(r / 2 - 275),
-  o = 0,
-  n > 420 && (o = Math.round(n / 2 - 210)),
-  window.open(url, null, "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + i + ",top=" + o)
+  let height = window.screen.height;
+  let width = window.screen.width;
+  let left = Math.round(width / 2 - 275);
+  let top = 0;
+  if(height > 420) { top = Math.round(height / 2 - 210) };
+
+  window.open(url, null, "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top)
 }
 
 function urlOptimize(url){
