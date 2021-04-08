@@ -11,6 +11,7 @@ function urlOptimize(url){
   let resultURL = url;
 
   if(url.match(/^\/\//)) { resultURL = document.location.protocol + resultURL }
+  if(url.match(/^\//)) { resultURL = document.location.origin + resultURL }
 
   // optimize amazon.co.jp URL
   amazon = resultURL.match(/^(https?:\/\/)(www.)?(amazon.co.jp\/)(?:.+?\/)(dp\/.+$)/);
