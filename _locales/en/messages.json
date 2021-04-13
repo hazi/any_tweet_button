@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Any tweet button",
+    "description": "The title of the application, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Opens the optimal Tweet screen for the page you are looking at.",
+    "description":"The description of the application, displayed in the web store."
+  }
+}

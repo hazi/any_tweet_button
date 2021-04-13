@@ -1,9 +1,10 @@
 {
   "author": "HAZI",
-  "name": "Any tweet button",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
   "short_name": "Any tweet",
   "version": "0.1.4",
-  "description": "will make the best tweet for the page you are viewing",
   "homepage_url": "https://hazi.jp",
   "permissions": ["activeTab"],
   "background": {
