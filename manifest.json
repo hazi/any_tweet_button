@@ -4,7 +4,7 @@
   "description": "__MSG_appDesc__",
   "default_locale": "en",
   "short_name": "Any tweet",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage_url": "https://hazi.jp",
   "permissions": ["activeTab"],
   "background": {
