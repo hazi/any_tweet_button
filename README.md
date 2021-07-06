@@ -15,6 +15,9 @@ It will look for a Tweet button on the page and if it exists, it will do the sam
 
 ## Release History
 
+**v0.1.5**
+* Added Japanese description
+
 **v0.1.4**
 * Fixed an issue where URLs starting with `//` would not work properly.
 
